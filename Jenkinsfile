@@ -20,7 +20,7 @@ pipeline {
                     
                     def workspacePath = env.WORKSPACE
                     // Build a Docker image for the Python app using a relative path within the workspace.
-                    def pythonAppPath = "${workspacePath}/hello_world.py"
+                    def pythonAppPath = "${workspacePath}\hello_world.py"
                     docker.build('my-python-app:latest', pythonAppPath)
                 }
             }
