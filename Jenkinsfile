@@ -38,10 +38,10 @@ pipeline {
         }
     }
 
-    // Clean up is commented out, but you can uncomment it if you want to clean the workspace
-    // post {
-    //     always {
-    //         cleanWs()
-    //     }
-    // }
+    // Uncommented post section for workspace cleanup
+    post {
+        always {
+            cleanWs()
+        }
+    }
 }
