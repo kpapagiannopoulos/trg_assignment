@@ -1,12 +1,8 @@
-
 pipeline {
     agent any
 
     environment {
-        // Configure the Docker Pipeline Plugin
-        DOCKER_REGISTRY_URL = 'https://hub.docker.com/repository/docker/kpapagiannopoulos/trg_assignment/'
-        DOCKER_REGISTRY_USERNAME = 'kpapagiannopoulos'
-        DOCKER_REGISTRY_PASSWORD = '$DOCKERHUB_CREDENTIALS'
+        DOCKER_HUB_CREDENTIALS = credentials('a2df36d0-9bbe-415b-ae56-724464c441e6') 
     }
 
     stages {
@@ -26,9 +22,14 @@ pipeline {
 
         stage('Publish Docker image') {
             steps {
-                // Publish the Docker image to Docker Hub (using the Docker Pipeline Plugin)
-                docker.withRegistry() {
-                    docker.push("hello_world:trg"")
+                script {
+                    // Use the credentials to log in to Docker Hub
+                    withCredentials([string(credentialsId: DOCKER_HUB_CREDENTIALS, variable: 'DOCKER_CREDENTIALS')]) {
+                        // Publish the Docker image to Docker Hub using the Docker Pipeline Plugin
+                        docker.withRegistry('', DOCKER_HUB_CREDENTIALS_USR, DOCKER_CREDENTIALS_PSW) {
+                            docker.push("hello_world:trg")
+                        }
+                    }
                 }
             }
         }
