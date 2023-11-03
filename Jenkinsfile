@@ -17,15 +17,8 @@ pipeline {
         stage('Dockerize') {
             steps {
                 script {
-                     echo 'Listing workspace contents:'
-            def result = sh(script: 'ls -la', returnStatus: true)
-            if (result == 0) {
-                echo 'Command executed successfully'
-            } else {
-                error 'Command failed'
-            }
-        }
-                    //docker.build('my-python-app:latest', './hello_world.py')
+                    
+                    docker.build('my-python-app:latest', './hello_world.py')
                 }
             }
         }
