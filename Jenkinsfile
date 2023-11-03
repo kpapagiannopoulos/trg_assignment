@@ -18,10 +18,8 @@ pipeline {
             steps {
                 script {
                     
-                   def workspacePath = pwd()
-                    // Build a Docker image for the Python app using a relative path within the workspace.
-                    def pythonAppPath = "${workspacePath}/hello_world.py"
-                    docker.build('my-python-app:latest', pythonAppPath)
+                
+                    docker.build('my-python-app:latest', 'C:\ProgramData\Jenkins\.jenkins\workspace\trg_assesment\trg_assignment\hello_world.py')
                 }
             }
         }
