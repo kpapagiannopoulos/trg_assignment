@@ -18,14 +18,7 @@ pipeline {
             steps {
                 script {
                     
-                
-                    /// Determine the path to hello_world.py relative to the workspace
-                def pythonAppRelativePath = 'hello_world.py'
-            
-            // Use the 'dir' step to change the current directory to the workspace
-                dir("${env.WORKSPACE}") {
-                // Build a Docker image for the Python app using the relative path
-                docker.build('my-python-app:latest', pythonAppRelativePath)
+                docker.build('my-python-app:latest', './hello_world.py')
                 }
             }
         }
