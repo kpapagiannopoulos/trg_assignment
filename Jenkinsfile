@@ -16,10 +16,12 @@ pipeline {
             }
         }
 
-        stage('Dockerize app') {
+          stage('Dockerize') {
             steps {
-                // Build a Docker image for the Python app
-                docker.build("hello_world:trg", "./hello_world.py")
+                script {
+                    // Build a Docker image for the Python app.
+                    docker.build('hello_world:trg', './hello_world.py')
+                }
             }
         }
 
