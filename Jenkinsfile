@@ -17,7 +17,7 @@ pipeline {
         stage('Dockerize') {
             steps {
                 script {
-                    docker.build('my-python-app:latest', './hello_world.py')
+                    docker.build('./hello_world.py')
                 }
             }
         }
