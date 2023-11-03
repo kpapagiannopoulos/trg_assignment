@@ -17,7 +17,7 @@ pipeline {
         stage('Dockerize') {
             steps {
                 script {
-                    docker.build('my-python-app:latest', 'https://github.com/kpapagiannopoulos/trg_assignment/blob/2000d495bfe6c846fd87beccd1fc9e312f52c189/hello_world.py')
+                    docker.build('my-python-app:latest', 'hello_world.py')
                 }
             }
         }
