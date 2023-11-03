@@ -6,7 +6,6 @@ pipeline {
     }
 
     stages {
-        sstages {
         stage('Checkout') {
             steps {
                 // Checkout the GitHub repository containing the Jenkinsfile
