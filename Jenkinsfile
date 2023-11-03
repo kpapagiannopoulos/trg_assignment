@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     sh "ls -la" // Add this line to list workspace contents
-                    docker.build('my-python-app:latest', './hello_world.py')
+                    //docker.build('my-python-app:latest', './hello_world.py')
                 }
             }
         }
