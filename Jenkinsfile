@@ -1,3 +1,5 @@
+
+
 pipeline {
     agent any
 
@@ -12,6 +14,7 @@ pipeline {
                 script {
                     git branch: 'main', 
                         url: 'https://github.com/kpapagiannopoulos/trg_assignment.git'
+                    git clone
                 }
             }
         }
