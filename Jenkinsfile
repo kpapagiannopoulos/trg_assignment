@@ -6,11 +6,14 @@ pipeline {
     }
 
     stages {
+        sstages {
         stage('Checkout') {
             steps {
                 // Checkout the GitHub repository containing the Jenkinsfile
-                git branch: 'main'
-                git checkout
+                script {
+                    git branch: 'main', 
+                        url: 'https://github.com/kpapagiannopoulos/trg_assignment.git'
+                }
             }
         }
 
