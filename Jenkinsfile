@@ -19,7 +19,7 @@ pipeline {
                 script {
                     
                 
-                    docker.build('my-python-app:latest', '~hello_world.py')
+                    docker.build('my-python-app:latest', 'C:/ProgramData/Jenkins/.jenkins/workspace/trg_assesment@2/trg_assignment/hello_world.py')
                 }
             }
         }
