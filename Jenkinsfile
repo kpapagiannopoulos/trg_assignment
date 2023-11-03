@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Build a Docker image for the Python app.
-                    docker.build('my-python-app:latest', 'C:\ProgramData\Jenkins\.jenkins\workspace\trg_assesment\hello_world.py')
+                    docker.build('my-python-app:latest', C:/ProgramData/Jenkins/.jenkins/workspace/trg_assesment/hello_world.py)
                 }
             }
         }
