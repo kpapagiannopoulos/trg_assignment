@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 script {
-                    cd 'C:/ProgramData/Jenkins/.jenkins/workspace'
+                   
                     git branch: 'main', url: 'https://github.com/kpapagiannopoulos/trg_assignment.git'
                 }
             }
