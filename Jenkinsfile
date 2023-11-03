@@ -19,7 +19,11 @@ pipeline {
                 script {
                     
                 
-                    docker.build('my-python-app:latest', 'C:/ProgramData/Jenkins/.jenkins/workspace/trg_assesment@2/trg_assignment/hello_world.py')
+                    // Determine the path to hello_world.py within the workspace
+                    def pythonAppPath = "${env.WORKSPACE}/hello_world.py"
+                    
+                    // Build a Docker image for the Python app using the relative path within the workspace
+                    docker.build('my-python-app:latest', pythonAppPath)
                 }
             }
         }
