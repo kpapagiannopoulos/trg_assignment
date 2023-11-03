@@ -10,6 +10,7 @@ pipeline {
             steps {
                 // Checkout the GitHub repository containing the Jenkinsfile
                 git branch: 'main'
+                git checkout
             }
         }
 
