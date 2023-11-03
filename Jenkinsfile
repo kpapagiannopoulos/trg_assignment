@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_HUB_CREDENTIALS = credentials('a2df36d0-9bbe-415b-ae56-724464c441e6') 
     }
-
+//test
     stages {
         stage('Checkout') {
             steps {
