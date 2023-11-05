@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                      // Authenticate with Docker Hub using credentials
-                    docker.withRegistry('https://hub.docker.com/repository/docker/kpapagiannopoulos/trg_assignment/general', DOCKER_HUB_CREDENTIALS) {
+                    docker.withRegistry('https://hub.docker.com/repository/docker/kpapagiannopoulos/trg_assignment/general', kpapagiannopoulos) {
                         // Push the Docker image to Docker Hub
                         def dockerImage = docker.image('my-python-app:latest')
                         dockerImage.push()
