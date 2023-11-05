@@ -26,11 +26,11 @@ pipeline {
         stage('Publish Docker image') {
             steps {
                 script {
-                    // Use the credentials to log in to Docker Hub
-                    withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: DOCKER_HUB_CREDENTIALS, usernameVariable: 'DOCKER_HUB_USERNAME', passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
-                        // Publish the Docker image to Docker Hub using the Docker Pipeline Plugin
-                        docker.withRegistry('https://hub.docker.com/r/kpapagiannopoulos/trg_assignment', 'docker-hub-credentials') {
-                            dockerImage.push()
+                    // Authenticate with Docker Hub using credentials
+                    docker.withRegistry('https://registry-1.docker.io', DOCKER_HUB_CREDENTIALS) {
+                        // Push the Docker image to Docker Hub
+                        def dockerImage = docker.image('my-python-app:latest')
+                        dockerImage.push()
                         }
                     }
                 }
