@@ -26,12 +26,11 @@ pipeline {
         stage('Publish Docker image') {
             steps {
                 script {
-                    // Authenticate with Docker Hub using credentials
+                     // Authenticate with Docker Hub using credentials
                     docker.withRegistry('https://hub.docker.com/', DOCKER_HUB_CREDENTIALS) {
                         // Push the Docker image to Docker Hub
                         def dockerImage = docker.image('my-python-app:latest')
                         dockerImage.push()
-                        }
                     }
                 }
             }
