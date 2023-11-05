@@ -22,7 +22,7 @@ pipeline {
                 }
             }
         }
-
+//add this
         stage('Publish Docker image') {
             steps {
                 script {
