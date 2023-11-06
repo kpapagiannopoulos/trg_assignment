@@ -5,6 +5,6 @@ WORKDIR /my-python-app
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 80
 
 CMD ["python", "hello_world.py"]
