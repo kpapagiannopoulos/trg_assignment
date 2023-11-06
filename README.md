@@ -45,7 +45,7 @@ As far as SSL certificates,  I created certificates from: https://letsencrypt.or
 14.	argocd app sync my-python-app
 15.	echo "Deployment process completed."
 
-This is a simple bash script I would use. In order to automate it more I would use helm:
+This is a simple bash script I would use. In order to automate it more I would use helm.
 
 
 
