@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hello-world-ingress
+spec:
+  entryPoints:
+    - web
+  routes:
+    - kind: Rule
+      match: Host(`your-domain.com`)  # Replace with your domain
+      services:
+        - name: hello-world-service
+          port: 80
+      middlewares:
+        -name: access-control-middleware #reference the middleware
+      tls:
+        secretName: your-tls-secret  # Reference the TLS Secret

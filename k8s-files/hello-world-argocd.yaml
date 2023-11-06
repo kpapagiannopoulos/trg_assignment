@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hello-world-app
+  namespace: argocd
+spec:
+  source:
+    repoURL: https://github.com/kpapagiannopoulos/trg_assignment/  # If you store your manifests in a Git repository
+    targetRevision: HEAD  # Specify the branch or commit
+    path: k8s-files/hello-world-deployment.yaml
+  destination:
+    server: https://127.0.0.1:59561
+    namespace: hello-world-app
+  project: default  # Specify the ArgoCD project
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
