@@ -47,4 +47,6 @@ What we could improve is the following:
 2.	Implement logging and monitoring
 3.	Backup and disaster recovery
 4.	Documentation
+5.	private repo and image repo
+   
 
