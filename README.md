@@ -38,6 +38,16 @@ As far as SSL certificates,  I created certificates from: https://letsencrypt.or
 7.	kubectl apply -f hello-world-tls-secret.yaml
 8.	kubectl apply -f hello-world-ingress-route.yaml
 9.	kubectl create namespace staging
+10.	kubectl apply -f devops-roles-bining.yaml
+11.	kubectl apply -f qa-roles-bining.yaml
+12.	kubectl apply -f dev-roles-bining.yaml
+13.	kubectl apply -f argocd-qa.yaml
+14.	argocd app sync my-python-app
+15.	echo "Deployment process completed."
+
+This is a simple bash script I would use. In order to automate it more I would use helm:
+
+
 
 To split the group rights I used RBAC Roles and Role Bindings. To setup passwords for each we may use built in mechanisms like kubeconfig or we may integrate a provider like LDAP.
 
