@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://your-git-repo
+    repoURL: https://github.com/kpapagiannopoulos/trg_assignment
     targetRevision: main
     path: staging
   destination:
