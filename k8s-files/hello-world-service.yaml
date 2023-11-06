@@ -7,5 +7,5 @@ spec:
     app: my-python-app
   ports:
   - protocol: TCP
-    port: 80  # Your application's port
-    targetPort: 80  # Your container's port
+    port: 8080  # Your application's port
+    targetPort: 8080  # Your container's port
