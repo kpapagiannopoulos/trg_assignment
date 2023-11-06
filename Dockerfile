@@ -1,6 +1,6 @@
 FROM python:3.9
 
-WORKDIR /hello_world.py
+WORKDIR /my-python-app
 
 
 COPY . .
